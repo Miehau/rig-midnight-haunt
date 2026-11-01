@@ -80,7 +80,7 @@ describe('digest routes', () => {
       const html = rows[index].html;
       const values = [row.job, row.owner ?? '—', row.runs, row.retries,
         row.lastStatus, row.lastError ?? '—', row.firstAt, row.lastAt];
-      const cells = Array.from(html.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g), match => match[1]);
+      const cells = Array.from(html.matchAll(/<(?:td|th)\b[^>]*>([\s\S]*?)<\/(?:td|th)>/g), match => match[1]);
       expect(cells).toEqual(values.map(String));
       if (row.retries >= 3 || row.lastStatus === 'fail') {
         expect(html).toMatch(warning);
