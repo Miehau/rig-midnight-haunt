@@ -30,11 +30,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22.19.0'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '12.16.1'
       - name: Install dependencies
-        run: |
-          corepack enable
-          corepack prepare pnpm@12.16.1 --activate
-          pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Verify
         run: pnpm test && pnpm typecheck
       - name: Export digest HTML
