@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,23 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Completed work
+
+- § 1: [#1 — Run-log reader and shared types](https://github.com/Miehau/rig-midnight-haunt/issues/1)
+- § 2a: [#2 — Digest HTML page](https://github.com/Miehau/rig-midnight-haunt/issues/2)
+- § 2b: [#3 — Digest JSON endpoint](https://github.com/Miehau/rig-midnight-haunt/issues/3)
+- § 2c: [#4 — Status-board digest links](https://github.com/Miehau/rig-midnight-haunt/issues/4)
+- § 2d: [#5 — Digest route tests](https://github.com/Miehau/rig-midnight-haunt/issues/5)
+- § 3: [#6 — Preview for review](https://github.com/Miehau/rig-midnight-haunt/issues/6)
+- § 4: [#7 — Preview cleanup and plan archival](https://github.com/Miehau/rig-midnight-haunt/issues/7)
+
+Verification: 10 tests and typecheck passed; both supplied nights were exercised
+in a browser with matching HTML/JSON job order and board counts. The course
+confirmed the reviewer had seen the marked preview before cleanup.
+
+Public preview: https://michalmlak.com/rig-midnight-haunt/
+After explicit human approval, the page was exported again with LANE_MARKER unset
+and replaced at the same URL. HTTPS verification returned 200, “no marker set”,
+and no previous lane marker. Preview HTML and marker were never committed.
+
