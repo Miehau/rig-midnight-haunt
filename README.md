@@ -28,3 +28,15 @@ Rows preserve original timestamp offsets and use event time for first/last event
 event; the last reported error remains visible after recovery. Invalid JSON or
 invalid records count as bad lines; a terminal newline is not an extra record.
 The supplied run logs are read-only.
+
+## Public review preview
+
+Enable GitHub Pages with GitHub Actions as its source, then run the
+“Deploy digest preview” workflow manually. Its optional `marker` input is public
+review data, not a secret: never enter an API key. The workflow starts rig and
+exports `/digest/2026-10-28` with curl, then deploys the single HTML file through a
+Pages artifact retained for one day. Neither the HTML nor the marker is committed.
+
+After review and approval, run the same workflow with an empty marker to replace
+the page at the same URL with “no marker set”. Disabling Pages takes the site
+offline but does not recall downloaded copies.
